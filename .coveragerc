@@ -1,0 +1,22 @@
+#SPDX-FileCopyrightText: 2024 Amgen
+#SPDX-License-Identifier: BSD-3-Clause
+
+[run]
+branch = True
+concurrency = multiprocessing
+omit =
+    gumps/compat/*
+    tests/*
+
+[report]
+ignore_errors = True
+
+exclude_lines =
+    ##Tests include a "__main__" clause in order to run that particular unittest
+    if __name__ == .__main__.:
+
+    ##When mocking test objects, keyword pass is used to fit interface
+    pass
+
+    ##When mocking test objects, return {} is used to fit interface
+    return {}

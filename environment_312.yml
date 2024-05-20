@@ -1,0 +1,47 @@
+#SPDX-FileCopyrightText: 2024 Amgen
+#SPDX-License-Identifier: BSD-3-Clause
+
+name: gumps_312
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - python=3.12
+  - blas=*=*mkl
+  - attrs
+  - openpyxl
+  - numpy
+  - pandas
+  - pyarrow
+  - scipy
+  - cvxopt
+  - git
+  - networkx
+  - salib
+  - mypy
+  - pylint
+  - pytest
+  - pytest-xdist
+  - pytest-cov
+  - filelock
+  - h5py
+  - addict
+  - ipykernel
+  - pymoo
+  - coverage
+  - typing_extensions
+  - seaborn
+  - corner
+  - arviz
+  - scikit-learn
+  - joblib
+  - pint
+  - optuna~=3.4.0
+  - lightning
+  - tensorboard
+  - py-xgboost-cpu
+  - multiprocess
+  - pytorch::pytorch~=2.2.0
+  - pytorch::cpuonly
+

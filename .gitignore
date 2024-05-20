@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2024 Amgen
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+__pycache__/
+dist/
+env/
+.idea/
+.cache/
+.vscode/
+.DS_Store
+*.egg-info/
+*.pyc
+html/
+/.ipynb_checkpoints
+.coverage
+.coverage.*
+htmlcov/**
+coverage.xml
+build/**
+loss_*.png
+*.pt
+lightning_logs/
+results/
+checkpoint*
+.is_*
+diag_graphs_*.png
+in_scaler.gz
+out_scaler.gz
+cov.xml

@@ -1,0 +1,212 @@
+SPDX-FileCopyrightText: 2024 Amgen
+SPDX-License-Identifier: BSD-3-Clause
+
+
+GUMPS Release Notes
+
+v3.1.3
+* Fix bug with train_indices/validation_indices loading for regressors
+
+v3.1.2
+* Add generic auto_tune interface for regressors
+* Add recursive feature elimination for polynomial regressors
+
+v3.1.1
+* Support validation_fraction = 0 for regressors that do not require validation (pytorch, xgboost)
+* Use loc instead of iloc in regressor_data for pandas dataframes
+* Validation validation_fraction parameters for regressors
+
+v3.1.0
+* Add Ensemble regressor
+* Standardize train/test split across all regressors
+* Add mutual info regression with automatic scaling and neighbors setting
+
+v3.0.7
+* Mutual Info Regression support (non-linear variable correlation)
+* Cache error metrics when a regressor is fit
+* Manual train/test split support for pyTorch and XGBoost
+* Regessors have a new clone method to copy the regressor and change parameters
+
+v3.0.6
+* Add parallel threadpool support
+
+v3.0.5
+* Add Optuna tuning support for XGBoost
+
+v3.0.4
+* WhatIf analysis for adaptive sampler
+* Train/Test split information for pytorch regressor
+* Optimize loading of regressors
+
+v3.0.3
+* Adaptive sampler now checks user_continue before has_next
+
+v3.0.2
+* Add a function to the adaptive sampler to control if iteration should continue
+* Python 3.12 environment support
+* Parallel test running support
+
+v3.0.1
+* Support multioutput for error_metrics in regressors
+
+v3.0.0
+* GUMPS moves the processing function into the workers
+* Add multiprocess support for Jupyter notebooks
+* Add Parametric Sweep Time Series sampling with data written out as the sampler runs
+* Batch interface now has iter_run method which yields results and does not store them in memory
+
+v2.2.2
+* GUMPS parallel runner converts exceptions to return values and adds an exception handler
+* Apps handle failed simulations
+    Adaptive sampler
+    Monte Carlo
+    Monte Carlo Time Series
+    Parametric Sweep
+    Response Surface
+* Sensitivity Analysis is undefined with failed simulations and it will raise an exception
+
+
+v2.2.1
+* Parallel data loading to pyTorch
+* Save response plots to a file
+* Save train/test curve to a file
+* Automatic Non-Linear scaling for sampler
+* Optuna tuning support for pyTorch
+
+v2.2.0
+* Add AIChE Presentation
+* Monte Carlo solver uses dataframes instead and the columns variable is removed
+* ask interface returns a dataframe
+* Parametric sweep uses dataframes instead and the columns variable is removed
+* use plt.show instead of figure.show
+* Additional units added to model interface specification
+* Models now use an attrs dataclass and a new method get_state_class
+
+v2.1.2
+* Regressors implement the Batch Study interface
+* Initial version of model interface specification implemented
+
+v2.1.1
+* Split response plots up into additional subdirectories
+* Response surface has save and load methods
+* Response surface drop nan values
+* Update parallel pool to close gracefully
+* Remove torchvision and torchaudio
+* Update regressor plots with an equal axis for comparison
+    and a line to indicate ideal value
+* Update pyTorch regressor to work on GPU
+* Update pyTorch regressor to control lightning logs and
+    logging directory
+
+v2.1.0
+* XGBoost regressor
+* Auto rebuild regressors and pca on load if the library version has changed
+* Renamed testz to tests
+* Create response surface plots for studies
+
+v2.0.7
+* Add generic loader for regressors
+
+v2.0.6
+* Sensitivity Analysis using SAlib
+* Batch Time Series interface
+* Monte Carlo Time Series UQ
+* load methods of regressors and PCA now return the object
+* Regressors have more loss Metrics
+* Intro notebook for the full chain of GUMPS development
+
+v2.0.5
+* Docker image creation for CI pipeline
+* Principle Component Analysis
+* pyTorch regressor
+* Automatic log scaling for regression and PCA
+* Graph kernel has been removed
+* Extensive testing based on the Ackley function along
+    new tutorial examples
+* Existing regressors support most sklearn options
+
+v2.0.4
+* Add Adaptive Sampler
+* Add new regressors
+    * Bayesian Ridge Regression
+    * Lasso Regression
+    * Lasso cross-validation Regression
+* Calling predict or error_metrics without fitting first will raise an exception
+* Extensive pylint cleanups
+* Updated examples for regressor and adaptive sampler
+
+v2.0.3
+* Fix problem with the package not finding some modules
+
+v2.0.2
+* Regressor framework added with sklearn based regressors
+    * Linear
+    * Quadratic
+    * Polynomial
+    * Gaussian process
+    * Multi-Layer Perceptron
+    * Random Forest
+* Regressor response graphs to add in choosing the right regressor
+* Smoothing utility for noisy time series data
+* Unit registry using Pint
+
+
+v2.0.1
+* New Parametric Sweep App
+* AWS Lambda Multiprocessing Support
+
+v2.0.0
+* New Kernel Interface
+* New Graph Kernel Interface
+* New Simulation Study Interface
+* New Batch Study Interface
+* New Monte Carlo Uncertainty Quantification Suite
+* New Sampler Solver
+* New PyMoo optimization Solver
+* Logging
+* HDF5 support
+* Parallel processing support
+* Compatibility with 1.3
+* Automatic Test Suite with Integration Examples
+* Publishing to Nexus PyPi
+* Code Quality Metrics
+
+v1.3
+* Variables are no longer converted to numpy arrays
+* Fluent Integration
+* StarCCM Integration
+* MultiDimensional Kernel
+* Loop Kernel
+* Parametric Sweep
+* Structure graph replaced with NetworkX
+* getChildren support in studies for data pipeline work
+
+v1.2
+* Add SingleObjectiveOptimization Problem
+* More verbose error messages in problem formulations
+* Add ODEIntProblem Interface
+* Refactor odeint solver to accept problem interface
+* Refactor Integration Test with New Formulation Mechanism for Problems
+* Add External Model Adapter to allow for modification of external files.
+
+v1.1.2
+* Add meshFile variable to Star Engine (to be paired with CoProcessI)
+* Print Command Needed for StarCCM instead of starting via Macro
+
+v1.1.1
+* Fix Minor Bug with Star Solver Interface
+* DeInitialize Star Kernel in case of Error
+* Check OS version before initializing the Star Engine
+* Include Presentation on GUMPS 1.1.1 Features
+* Expand unit testing for GUMPS models
+
+v1.1
+* New Formulation Mechanism for Problems
+* More Verbose Errors When Setting Up Problems
+* Efficiency Improvements to Distributed Kernel
+* Optimization Problem Interfaces
+* GSA Problem Interfaces
+* CVX Solver
+* DEAP Solver
+* SAlib Solver
+* Sampling Solver
