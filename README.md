@@ -19,7 +19,7 @@ models together.
 
 You can create a gumps environment using
 mamba env create -f environment_XXX.yml where XXX is the environment you want to create.
-Wwe offer Python 3.10 and 3.11 with a test environent for 3.12 in both CPU and GPU accelerated version.
+We offer Python 3.10 and 3.11 with a test environent for 3.12 in both CPU and GPU accelerated version.
 
 Activate the enivironment and then run
 python setup.py sdist bdist_wheeel
